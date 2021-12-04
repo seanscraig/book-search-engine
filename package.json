@@ -14,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "node-gyp": "^8.4.1",
+    "node-pre-gyp": "^0.17.0"
   }
 }
