@@ -2,28 +2,27 @@ const { gpl } = require("apollo-server-express");
 
 const typeDefs = gpl`
   type User {
-    _id: ID
-    username: String
-    email: String
-    password: String
+    _id: ID!
+    username: String!
+    email: String!
+    password: String!
     bookCount: Int
     savedBooks: [Book]
   }
 
   type Book {
-    _id: ID
-    bookId: String
-    authors: String
+    bookId: ID!
+    authors: [String]
     description: String
     image: String
     link: String
-    title: String
+    title: String!
   }
 
-  input saveBook {
-    description: String
+  input BookInput {
+    description: String!
     title: String
-    bookId: String
+    bookId: String!
     image: String
     link: String
     authors: [String]
@@ -41,7 +40,7 @@ const typeDefs = gpl`
   type Mutation {
     addUser(username: String!, email:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    saveBook(input: saveBook!): User
+    saveBook(input: BookInput!): User
     removeBook(bookId: ID!): User
   }
 `;

@@ -30,7 +30,7 @@ export const SAVE_BOOK = gpl`
       _id
       username
       email
-      saveBooks {
+      savedBooks {
         bookId
         authors
         image
@@ -48,7 +48,7 @@ export const REMOVE_BOOK = gpl`
       _id
       username
       email
-      saveBooks {
+      savedBooks {
         bookId
         authors
         image

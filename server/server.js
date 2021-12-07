@@ -7,7 +7,7 @@ const { authMiddleware } = require("./utils/auth");
 
 const db = require("./config/connection");
 
-const routes = require("./routes");
+// const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === "production") {
 // })
 
 // comment out when in production
-app.use(routes);
+// app.use(routes);
 
 db.once("open", () => {
   app.listen(PORT, () => {
