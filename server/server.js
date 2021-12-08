@@ -29,9 +29,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // uncomment when in production
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// })
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+})
 
 // comment out when in production
 // app.use(routes);
