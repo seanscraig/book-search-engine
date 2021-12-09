@@ -9,7 +9,7 @@ import {
 
 import { getMe, deleteBook } from "../utils/API";
 import Auth from "../utils/auth";
-import { removeBookId } from "../utils/localStorage";
+import { removeBookId, savedBookIds } from "../utils/localStorage";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
@@ -92,14 +92,14 @@ const SavedBooks = () => {
       </Jumbotron>
       <Container>
         <h2>
-          {userData.savedBooks.length
-            ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? "book" : "books"
+          {userData.savedBooks?.length
+            ? `Viewing ${userData.savedBooks?.length} saved ${
+                userData.savedBooks?.length === 1 ? "book" : "books"
               }:`
             : "You have no saved books!"}
         </h2>
         <CardColumns>
-          {userData.savedBooks.map((book) => {
+          {userData.savedBooks?.map((book) => {
             return (
               <Card key={book.bookId} border="dark">
                 {book.image ? (
